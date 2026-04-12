@@ -54,9 +54,9 @@
   --color-surface-2:#f8fafb;
   --color-surface-offset:#edf0f4;
   --color-divider:#dde3ea;
-  --color-border:#c8d0db;
+  --color-border:#a8b8c8;
   --color-text:#1a2330;
-  --color-text-muted:#5a6e84;
+  --color-text-muted:#3d5570;
   --color-text-faint:#a0b0c0;
   --color-text-inverse:#ffffff;
   --color-primary:#1a6a96;
@@ -65,8 +65,8 @@
   --color-primary-highlight:#ddeef8;
   --color-gold:#a07828;
   --shadow-sm:0 1px 3px oklch(0.2 0.02 230/0.08);
-  --shadow-md:0 4px 16px oklch(0.2 0.02 230/0.1);
-  --shadow-lg:0 16px 48px oklch(0.2 0.02 230/0.14);
+  --shadow-md:0 4px 16px oklch(0.2 0.02 230/0.12);
+  --shadow-lg:0 16px 48px oklch(0.2 0.02 230/0.18);
 }
 
 /* ── BASE ── */
@@ -111,9 +111,9 @@ section{padding-block:clamp(var(--space-16),8vw,var(--space-24));}
 .container-wide{max-width:var(--content-wide);margin-inline:auto;padding-inline:var(--space-6);}
 
 /* ── HERO ── */
-#hero{padding-top:calc(68px + clamp(var(--space-16),8vw,var(--space-24)));padding-bottom:clamp(var(--space-16),8vw,var(--space-24));min-height:100dvh;display:flex;align-items:center;position:relative;overflow:hidden;}
+#hero{padding-top:calc(68px + clamp(var(--space-16),8vw,var(--space-24)));padding-bottom:clamp(var(--space-16),8vw,var(--space-24));min-height:85dvh;display:flex;align-items:center;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,color-mix(in oklch,var(--color-primary) 8%,transparent),transparent),radial-gradient(ellipse 50% 50% at 20% 80%,color-mix(in oklch,var(--color-gold) 5%,transparent),transparent);pointer-events:none;}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-6);padding:var(--space-2) var(--space-4);background:var(--color-primary-highlight);border-radius:var(--radius-full);border:1px solid color-mix(in oklch,var(--color-primary) 30%,transparent);}
 .hero-title{font-family:var(--font-display);font-size:var(--text-hero);font-weight:400;line-height:1.05;color:var(--color-text);margin-bottom:var(--space-6);}
 .hero-title em{font-style:italic;color:var(--color-primary);}
@@ -124,7 +124,7 @@ section{padding-block:clamp(var(--space-16),8vw,var(--space-24));}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-12);padding-top:var(--space-12);border-top:1px solid var(--color-divider);}
 .stat-value{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:400;color:var(--color-text);line-height:1;}
 .stat-label{font-size:var(--text-xs);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:var(--space-1);}
-.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-visual{position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:5rem;}
 .hero-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-8);box-shadow:var(--shadow-lg);width:100%;max-width:380px;}
 .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-6);}
 .card-label{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.1em;color:var(--color-text-muted);}
@@ -156,7 +156,7 @@ section{padding-block:clamp(var(--space-16),8vw,var(--space-24));}
 /* ── HOW IT WORKS ── */
 .hiw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6);margin-top:var(--space-12);}
 .hiw-card{padding:var(--space-6);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);position:relative;}
-.hiw-number{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:400;color:color-mix(in oklch,var(--color-primary) 20%,var(--color-surface));line-height:1;margin-bottom:var(--space-4);}
+.hiw-number{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:400;color:color-mix(in oklch,var(--color-primary) 40%,var(--color-surface));line-height:1;margin-bottom:var(--space-4);}
 .hiw-title{font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-bottom:var(--space-3);}
 .hiw-body{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65;}
 @media(max-width:768px){.hiw-grid{grid-template-columns:1fr;}}
@@ -170,7 +170,7 @@ section{padding-block:clamp(var(--space-16),8vw,var(--space-24));}
 
 /* ── TEAM ── */
 #team{background:var(--color-surface);}
-.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:var(--space-6);margin-top:var(--space-12);}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-6);margin-top:var(--space-12);}
 .team-card{padding:var(--space-6);background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);transition:box-shadow var(--transition-interactive),transform var(--transition-interactive);}
 .team-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
 .team-avatar{width:48px;height:48px;border-radius:var(--radius-full);background:linear-gradient(135deg,var(--color-primary),color-mix(in oklch,var(--color-primary) 60%,var(--color-gold)));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:var(--text-lg);color:white;font-weight:400;margin-bottom:var(--space-4);}
@@ -184,7 +184,7 @@ section{padding-block:clamp(var(--space-16),8vw,var(--space-24));}
 .pod-card h4{font-size:var(--text-sm);font-weight:600;color:var(--color-text);}
 .pod-card span{font-size:var(--text-xs);color:var(--color-text-muted);display:block;margin-bottom:var(--space-2);}
 .pod-label{font-size:var(--text-xs);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);background:var(--color-primary-highlight);color:var(--color-primary);font-weight:600;display:inline-block;}
-@media(max-width:768px){.pod-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.pod-grid{grid-template-columns:1fr;}.team-grid{grid-template-columns:1fr;}}
 
 /* ── JOIN ── */
 #join{background:radial-gradient(ellipse 70% 70% at 50% 50%,color-mix(in oklch,var(--color-primary) 10%,var(--color-bg)),var(--color-bg));}
@@ -267,10 +267,10 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
           Touro University · Lander College for Men
         </div>
         <h1 class="hero-title reveal">
-          Real research.<br><em>Simulated capital.</em>
+          Invest in<br><em>knowledge.</em>
         </h1>
         <p class="hero-subtitle reveal">
-          LCM Investment Group is a student-run mock investment firm at Lander College for Men. We learn finance by doing — researching real companies, building model portfolios, and making decisions as a team.
+          LCM Investment Group is a student-run mock investment firm at Lander College for Men. We learn finance by doing it — researching real companies, building model portfolios, and making decisions as a team.
         </p>
         <div class="hero-actions reveal">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2iIIX5mqm8g7_Rid_zwFWo1zIdZO_jrtp0y2jBqAqrcKNw/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -282,33 +282,30 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
           </a>
         </div>
         <div class="hero-stats reveal">
+          <div><div class="stat-value">7</div><div class="stat-label">Members</div></div>
           <div><div class="stat-value">3</div><div class="stat-label">Research Pods</div></div>
           <div><div class="stat-value">$100K</div><div class="stat-label">Simulated AUM</div></div>
-          <div><div class="stat-value">S&amp;P 500</div><div class="stat-label">Benchmark</div></div>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-card">
           <div class="card-header">
-            <span class="card-label">LCM at a Glance</span>
+            <span class="card-label">LCM Model Portfolio</span>
+            <span class="card-badge">Simulated</span>
           </div>
           <div class="portfolio-row">
-            <div><div class="ticker">Structure</div></div>
-            <div class="ticker-name">3 sector-focused research pods</div>
+            <div><div class="ticker">Pod A</div><div class="ticker-name">Sector coverage TBD</div></div>
+            <div class="portfolio-change" style="color:var(--color-text-faint);">—</div>
           </div>
           <div class="portfolio-row">
-            <div><div class="ticker">Meetings</div></div>
-            <div class="ticker-name">Thursdays at lunch</div>
+            <div><div class="ticker">Pod B</div><div class="ticker-name">Sector coverage TBD</div></div>
+            <div class="portfolio-change" style="color:var(--color-text-faint);">—</div>
           </div>
           <div class="portfolio-row">
-            <div><div class="ticker">Benchmark</div></div>
-            <div class="ticker-name">S&amp;P 500</div>
+            <div><div class="ticker">Pod C</div><div class="ticker-name">Sector coverage TBD</div></div>
+            <div class="portfolio-change" style="color:var(--color-text-faint);">—</div>
           </div>
-          <div class="portfolio-row">
-            <div><div class="ticker">Capital</div></div>
-            <div class="ticker-name">$100K simulated</div>
-          </div>
-          <div class="card-footer">Portfolio positions will be published once the club begins operations in Spring 2026.</div>
+          <div class="card-footer">Positions will be added once the fund begins operations after Pesach break.</div>
         </div>
       </div>
     </div>
@@ -355,7 +352,7 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
 <section id="how-it-works">
   <div class="container">
     <p class="section-eyebrow reveal">Process</p>
-    <h2 class="section-title reveal">How we run the portfolio.</h2>
+    <h2 class="section-title reveal">How we run the fund.</h2>
     <div class="hiw-grid">
       <div class="hiw-card reveal">
         <div class="hiw-number">01</div>
@@ -365,7 +362,7 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
       <div class="hiw-card reveal">
         <div class="hiw-number">02</div>
         <h3 class="hiw-title">Investment Debate</h3>
-        <p class="hiw-body">Each week, pods present a thesis. The Portfolio Manager and CIO stress-test assumptions, the Risk Officer flags downside exposure, and the group votes on whether to take the position. The CIO sets final sizing.</p>
+        <p class="hiw-body">Each week, pods present a thesis. The Portfolio Manager and CIO stress-test assumptions, the Risk Officer flags downside exposure, and the group votes on position sizing.</p>
       </div>
       <div class="hiw-card reveal">
         <div class="hiw-number">03</div>
@@ -400,7 +397,7 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
         </div>
         <div class="meeting-text">
           <strong>First Meeting</strong>
-          <span>Spring 2026</span>
+          <span>After Pesach break</span>
         </div>
       </div>
     </div>
@@ -414,25 +411,25 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
     <h2 class="section-title reveal">Meet the team.</h2>
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-avatar">YL</div>
+        <div class="team-avatar">Y</div>
         <div class="team-name">Yoshua Leff</div>
         <div class="team-role">Chief Investment Officer</div>
-        <p class="team-desc">Leads investment strategy and has final authority on portfolio decisions. Bloomberg BMC and Finance Fundamentals certified.</p>
+        <p class="team-desc">Leads investment strategy, chairs weekly meetings, and has final authority on portfolio decisions.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-avatar">YG</div>
+        <div class="team-avatar">Y</div>
         <div class="team-name">Yehuda Green</div>
         <div class="team-role">Portfolio Manager</div>
-        <p class="team-desc">Manages the model portfolio, oversees position sizing, and tracks performance against the S&amp;P 500.</p>
+        <p class="team-desc">Manages the model portfolio, oversees position sizing, and tracks performance against benchmark.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-avatar">BG</div>
+        <div class="team-avatar">B</div>
         <div class="team-name">Benzi Guttman</div>
         <div class="team-role">Chief Risk Officer & Founder</div>
         <p class="team-desc">Founded LCM in March 2026. Manages downside exposure and ensures the portfolio operates within defined risk parameters.</p>
       </div>
       <div class="team-card reveal">
-        <div class="team-avatar">YG</div>
+        <div class="team-avatar">Y</div>
         <div class="team-name">Yaakov Goldberg</div>
         <div class="team-role">Fund Controller</div>
         <p class="team-desc">Tracks all simulated transactions, maintains performance records, and reports portfolio metrics to the team.</p>
@@ -471,10 +468,11 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
       </div>
       <h2 class="section-title reveal">Ready to invest in yourself?</h2>
       <p class="join-body reveal">
-        LCM Investment Group is open to all Lander College students — no finance background required. If you're curious about markets and willing to do the work, this is where you start.
+        LCM Investment Group is open to all Lander College students — no finance background required. If you're curious, driven, and want to understand how markets actually work, this is your seat at the table.
       </p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2iIIX5mqm8g7_Rid_zwFWo1zIdZO_jrtp0y2jBqAqrcKNw/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary reveal" style="font-size:var(--text-base);padding:var(--space-4) var(--space-10);border-radius:var(--radius-full);">
-        Apply Now →
+        Apply Now — It Takes 2 Minutes
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <div class="join-cards reveal">
         <div class="join-card">
@@ -522,7 +520,7 @@ footer{background:var(--color-surface);border-top:1px solid var(--color-border);
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">&copy; 2026 LCM Investment Group &middot; Touro University / Lander College for Men</span>
-
+      <span class="footer-copy">Founded March 2026 by Benzi Guttman</span>
     </div>
   </div>
 </footer>
