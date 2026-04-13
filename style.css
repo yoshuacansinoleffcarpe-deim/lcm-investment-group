@@ -116,6 +116,8 @@ main { flex: 1; }
 .nav-brand img {
   height: 36px;
   width: auto;
+  opacity: 1;
+  filter: none;
 }
 .nav-brand-label {
   font-family: var(--font-body);
