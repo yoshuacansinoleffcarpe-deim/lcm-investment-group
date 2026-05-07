@@ -627,6 +627,14 @@ main { flex: 1; }
   font-weight: 700;
   flex-shrink: 0;
 }
+.member-photo {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  display: block;
+}
 .member-info h3 {
   font-size: var(--text-base);
   font-weight: 600;
