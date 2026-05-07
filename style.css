@@ -680,6 +680,21 @@ main { flex: 1; }
 }
 .pod-name { font-size: var(--text-sm); font-weight: 600; color: var(--gray-800); }
 .pod-role { font-size: var(--text-xs); color: var(--gray-500); }
+.pod-analyst {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-200);
+}
+.pod-analyst .member-photo,
+.pod-analyst .member-initials {
+  width: 32px;
+  height: 32px;
+  font-size: 0.65rem;
+}
+.pod-analyst-info { display: flex; flex-direction: column; min-width: 0; }
 @media (max-width: 600px) {
   .pods-grid { grid-template-columns: 1fr; }
 }
